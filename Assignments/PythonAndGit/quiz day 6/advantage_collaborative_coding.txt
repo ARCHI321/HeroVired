@@ -1,0 +1,7 @@
+
+The main advantage of collaborative coding is - 
+
+It drives more communication. In collaborative coding, everyone works together to create high-quality software products.
+And if they work together, the premise is that they communicate in abundance to get the work done.That is, in fact, 
+one of the main benefits of collaborative coding — as opposed to solo coding — because it leads to more communication 
+between developers.

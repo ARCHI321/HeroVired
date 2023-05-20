@@ -1,1 +1,2 @@
-https://github.com/ARCHI321/HeroVired/tree/master/BasicsOFJava/PracticePrograms
+Actual Code - https://github.com/ARCHI321/HeroVired/tree/master/BasicsOFJava/PracticePrograms
+Assignments images - https://github.com/ARCHI321/HeroVired/tree/master/Assignments/Java/assignment2

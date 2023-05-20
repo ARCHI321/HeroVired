@@ -49,5 +49,7 @@ public class unitConversion {
             ans = sc.nextLine();
         } while (ans.equals("y"));
 
+        sc.close();
+
     }
 }

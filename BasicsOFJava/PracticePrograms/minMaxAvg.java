@@ -36,6 +36,7 @@ public class minMaxAvg {
         System.out.println("the max of the 3 numbers : " + max);
         System.out.println("the avg of the 3 numbers : " + avg);
         
-
+        sc.close();
     }
+    
 }

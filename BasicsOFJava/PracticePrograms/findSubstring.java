@@ -1,4 +1,4 @@
-package Assignments;
+package BasicsOFJava.PracticePrograms;
 
 import java.util.Scanner;
 

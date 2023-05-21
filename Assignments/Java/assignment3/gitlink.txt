@@ -1,1 +1,3 @@
-https://github.com/ARCHI321/HeroVired/tree/master/Assignments/Java/assignment3
+Snapshots - https://github.com/ARCHI321/HeroVired/tree/master/Assignments/Java/assignment3
+
+Actual code - https://github.com/ARCHI321/HeroVired/tree/master/BasicsOFJava/PracticePrograms

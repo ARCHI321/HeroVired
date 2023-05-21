@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <title>Google home page replication</title>
+    <style>
+        .home {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header {
+            width: 100%;
+            height: 180px;
+        }
+
+        #G {
+            color: #4285f4;
+        }
+
+        #O,
+        #E {
+            color: #db4437;
+        }
+
+        #O1 {
+            color: #f4b400;
+        }
+
+        #L {
+            color: #0f9d58;
+        }
+
+        .header h1 {
+            text-align: center;
+            font-size: 75px;
+            font-family: "Sans";
+            letter-spacing: -7px;
+        }
+
+        .search {
+            width: 100%;
+            height: 50px;
+        }
+
+        #search-bar {
+            color: gray;
+            border: 1px solid gray;
+            border-radius: 25px;
+            width: 80%;
+            height: 30px;
+            margin-left: 10%;
+            margin-right: 10%;
+            padding: 15px;
+        }
+
+        .btn {
+            width: 100%;
+            height: 50px;
+        }
+
+        #google {
+            display: block;
+            margin: auto;
+            background-color: #f8f9fa;
+            border-width: 0px;
+            border-radius: 2px;
+            padding: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home">
+        <div class="inner">
+            <div class="header">
+                <h1>
+                    <span id="G">G</span>
+                    <span id="O">o</span>
+                    <span id="O1">o</span>
+                    <span id="G">g</span>
+                    <span id="L">l</span>
+                    <span id="E">e</span>
+                </h1>
+            </div>
+            <div class="search">
+                <input type="text" id="search-bar" placeholder="&#128269; Type something here" />
+            </div>
+            <div class="btn">
+                <button onclick="search()" id="google">Google search</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function search() {
+            var searchText = document.getElementById("search-bar").value;
+            var newUrl = "https://www.google.com/search?q=" + searchText;
+            window.open(newUrl);
+        }
+    </script>
+</body>
+
+</html>

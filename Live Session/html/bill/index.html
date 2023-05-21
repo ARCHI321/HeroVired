@@ -1,0 +1,193 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color:#F2F4F4;
+            }
+            hr{
+                background-color:#03272F;
+                width:85%;
+                height:40px;
+                
+            }
+            .title{
+                color:#03272F;
+                font-size:80px;
+                text-align:center;
+                font-family:Bebas Neue;
+                font-weight:normal;
+            }
+            .Bill{
+                width:85%;
+                margin:auto;
+                height:auto;
+            }
+            .bill-left {
+                width:45%;
+                float:left;
+            }
+            .payment-left{
+                width:45%;
+                float:left;
+                }
+            .bill-right{
+                width:50%;
+                float:right;
+            }
+                
+            .payment-right{
+                width:50%;
+                float:right;
+            }
+            
+            
+            .bill-left h1{
+                color:gray;
+                font-family:Bebas Neue;
+                font-weight:normal;
+                font-size:50px;
+                text-align:right;
+                line-height:0.9;
+            }
+            .hr-left{
+                width:100%;
+                height:8px;
+                background-color:gray;
+            }
+            .bill-right h1{
+                color:#30272F;
+                font-family:Bebas Neue;
+                font-weight:normal;
+                font-size:62px;
+                text-align:left;
+                line-height:0.9;
+            }
+            .hr-right{
+                width:100%;
+                height:8px;
+                background-color:#30272F;
+            }
+            .final-amount h1{
+                color:#1480BC;
+                font-family:Bebas Neue;
+                font-weight:normal;
+                font-size:55px;
+                margin-left:12%;
+            }
+            .final-amount-hr{
+                width:100%;
+                height:10px;
+            
+            }
+            .payment-left h1{
+                color:#1480BC;
+                font-weight:normal;
+                font-size:40px;
+                line-height:0.9px;
+            }
+            .payment-right h1{
+                color:#03272F;
+                font-weight:normal;
+                font-size:40px;
+                line-height:0.9px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div>
+        <h1 class = "title" >
+            BILL
+            
+        </h1>
+        </div>
+        <hr>
+        <div class = "Bill">
+            <div class = "bill-left">
+                <h1>
+                  ORIGINAL
+                  AMOUNT:
+                </h1>
+                <h1>
+                    DISCOUNT:
+                </h1>
+                <hr class = "hr-left">
+            </div>
+            <div class = "bill-right">
+                <h1 id="price">
+                    $1000
+                </h1>
+                <h1 id="dis">
+                    $100
+                </h1>
+                <hr class ="hr-right">
+            </div>
+            <div class = "final-amount">
+                <h1>
+                    FINAL<br>
+                    AMOUNT: <span id="total">333</span>
+                </h1>
+                <hr class = "final-amount-hr">
+                
+            </div>
+            <div class = "payment-left">
+                <h1>
+                   PAYMENT METHOD: 
+                </h1>
+                <br>
+                <h1>
+                    FREE GOODIES:
+                </h1>
+            </div>
+            <div class= "payment-right">
+                <h1 id="method">
+                    DWARFIAN CARD
+                </h1>
+                <br>
+                <h1 id = "gift">
+
+                </h1>
+            </div>
+            
+        </div>
+
+        <script>
+           var price = (document.getElementById("price").innerHTML).trim();
+           price = price.slice(1);
+           price = parseInt(price);
+           if(price >=100 && price<=200){
+              var discount = 50;
+              document.getElementById("dis").innerHTML =  '$' + discount;
+              var method = (document.getElementById("method").innerHTML).trim();
+              console.log(method);
+              if(method == "DWARFIAN CARD"){
+                document.getElementById("gift").innerHTML = "GRANOLA BAR";
+              }
+              else if(method == "STONES"){
+                document.getElementById("gift").innerHTML = "ENERGY DRINK";
+              }
+           }
+           else if(price >200){
+              var discount = 100;
+              document.getElementById("dis").innerHTML =  '$' + discount;
+              var method = (document.getElementById("method").innerHTML).trim();
+              if(method == "DWARFIAN CARD"){
+                document.getElementById("gift").innerHTML = "BARBECUE SAUCE";
+              }
+              else if(method == "STONES"){
+                document.getElementById("gift").innerHTML = "COFFEE POWDER";
+              }
+
+              console.log(method);
+           }
+           
+           console.log(price,discount);
+           discount = parseInt(discount);
+           var total = price - discount;
+           
+
+           document.getElementById("total").innerHTML =  '$' + total
+        </script>
+        
+    </body>
+</html>

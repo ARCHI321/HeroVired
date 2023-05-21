@@ -1,0 +1,382 @@
+<html>
+  <head>
+    <title>Drum Kit</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 100vh;
+      }
+      .title-wrapper {
+        background-color: brown;
+        height: 6%;
+        position: relative;
+      }
+      .drum-kit-wrapper {
+        height: 72%;
+      }
+      .drum-kit-image {
+        width: 100%;
+        width: 100%;
+        height: -webkit-fill-available;
+      }
+      .hihat-top-cymbal {
+        width: 15%;
+        position: absolute;
+        top: 5%;
+        left: 62.7%;
+        transition-property: all;
+        transition-duration: 0.05s;
+      }
+      .crash-cymbal {
+        width: 14%;
+        position: absolute;
+        top: 15%;
+        left: 23%;
+        transition-property: all;
+        transition-duration: 0.05s;
+
+      }
+      .drum-kit-wrapper {
+        position: relative;
+      }
+
+      .bottom {
+        background-color: black;
+        height: 22%;
+      }
+      .title-wrapper h1 {
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .key-mapping {
+        font-style: BioRhyme;
+        text-align: center;
+        color: white;
+      }
+      .key-map-header {
+        font-size: 30px;
+        font-weight: bold;
+      }
+      li {
+        padding: 5px 0px 5px 10px;
+        display: inline-block;
+      }
+      .key-name {
+        color: black;
+        height: 30px;
+        width: 30px;
+        background-color: white;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 50%;
+        border: 2px solid #795f41;
+        margin: auto;
+      }
+      .element-name {
+        font-size: 15px;
+        color: white;
+      }
+      .key {
+        background-color: white;
+        text-align: center;
+        font-family: BioRhyme;
+        font-size: 16px;
+        font-weight: bold;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        border: 3px solid #2433a7;
+        color: black;
+        transition-property: all;
+        transition-duration: 0.05s;
+      }
+      .key.crash {
+        top: 10%;
+        left: 20%;
+        position: absolute;
+      }
+      .key.ride {
+        top: 10%;
+        left: 36%;
+        position: absolute;
+      }
+      .key.floor-tom {
+        top: 52%;
+        left: 37%;
+        position: absolute;
+      }
+      .key.mid-tom {
+        top: 30%;
+        left: 42%;
+        position: absolute;
+      }
+      .key.high-tom {
+        top: 30%;
+        left: 58%;
+        position: absolute;
+      }
+      .key.kick {
+        top: 67%;
+        left: 42%;
+        position: absolute;
+      }
+      .key.kick1 {
+        top: 67%;
+        left: 58%;
+        position: absolute;
+      }
+      .key.snare {
+        top: 45%;
+        left: 61%;
+        position: absolute;
+      }
+      .key.hi-hat-open {
+        top: 2%;
+        left: 62%;
+        position: absolute;
+      }
+      .key.hi-hat-closed {
+        top: 2%;
+        left: 75%;
+        position: absolute;
+      }
+      #edit-button {
+        position: absolute;
+        top: 15%;
+        right: 5%;
+        height: 40px;
+        width: 40px;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_1FNgPDiH0F7hcwQC2lnSOY9gg-XgMF9G7d_Dier_U-hUggeOGhqclgIDgFFF8w8YXFk&usqp=CAU");
+        background-size: contain;
+      }
+      .playing {
+        transform: scale(2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title-wrapper">
+        <button id="edit-button"></button>
+        <h1 class="h1">Drum Kit</h1>
+      </div>
+      <div class="drum-kit-wrapper">
+        <span class="key crash key_e">E</span>
+        <span class="key ride key_r">R</span>
+        <span class="key floor-tom key_f">F</span>
+        <span class="key mid-tom key_g">G</span>
+        <span class="key high-tom key_h">H</span>
+        <span class="key kick key_v">V</span>
+        <span class="key kick1 key_b">B</span>
+        <span class="key snare key_j">J</span>
+        <span class="key hi-hat-open key_i">I</span>
+        <span class="key hi-hat-closed key_k">K</span>
+
+        <img
+          class="drum-kit-image"
+          src="https://tekie-backend.s3.amazonaws.com/webDevelopment/Drum set BG resized_cl0qxaxtv015q0x4fe534coy7_1647275504323.png"
+        />
+        <img
+          class="hihat-top-cymbal"
+          id="hihat-top"
+          src="https://tekie-backend.s3.amazonaws.com/webDevelopment/2_cl0f92w7900ni0y3y5mdj355e_1646569690245.png"
+        />
+        <img
+          class="crash-cymbal"
+          id="crash-ride"
+          src="https://tekie-backend.s3.amazonaws.com/webDevelopment/1_cl0f91skr00140y3oc9jj1ioa_1646569638891.png"
+        />
+        <div class="key-mapping">
+          <h2 class="key-map-header">Key Mapping</h2>
+        </div>
+        <div class="key-map-wrapper">
+          <ul type="none" class="key-map-list">
+            <li>
+              <button class="key-name">E</button>
+              <span class="element-name">Crash</span>
+            </li>
+            <li>
+              <button class="key-name">R</button>
+              <span class="element-name">Ride</span>
+            </li>
+            <li>
+              <button class="key-name">F</button>
+              <span class="element-name">Floor-tom</span>
+            </li>
+            <li>
+              <button class="key-name">G</button>
+              <span class="element-name">Mid-tom</span>
+            </li>
+            <li>
+              <button class="key-name">H</button>
+              <span class="element-name">High-tom</span>
+            </li>
+            <li>
+              <button class="key-name">V</button>
+              <span class="element-name">Kick</span>
+            </li>
+            <li>
+              <button class="key-name">B</button>
+              <span class="element-name">Kick</span>
+            </li>
+            <li>
+              <button class="key-name">J</button>
+              <span class="element-name">Snare</span>
+            </li>
+            <li>
+              <button class="key-name">I</button>
+              <span class="element-name">Hi-Hat-Open</span>
+            </li>
+            <li>
+              <button class="key-name">K</button>
+              <span class="element-name">Hi-Hat-Closed</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bottom"></div>
+    </div>
+
+    <script>
+      function input() {
+        var input1 = prompt("Enter the title");
+        return input1;
+      }
+      var changeTitle = () => {
+        var name = input();
+        var drumTitle = document.querySelector(".h1");
+        drumTitle.innerText = name;
+      };
+
+      var editButton = document.querySelector("#edit-button");
+      editButton.addEventListener("click", changeTitle);
+
+      function playSound(url) {
+        var audioElement = new Audio(url);
+        audioElement.currentTime = 0;
+        audioElement.play();
+      }
+
+      function playDrum(event) {
+        var key = event.key;
+        if (key === "e") {
+          playSound(
+            "https://tekie-backend.s3.amazonaws.com/content/crash_sound_69&82.wav"
+          );
+          animateKey(key);
+        }
+
+        if (key === "r") {
+          playSound(
+            "https://tekie-backend.s3.amazonaws.com/content/crash_sound_69&82.wav"
+          );
+          animateKey(key);
+        }
+
+        if (key === "f") {
+          playSound(
+            "https://tekie-backend.s3.amazonaws.com/content/tom-low_sound_70.wav"
+          );
+          animateKey(key);
+        }
+        if (key === "g") {
+          playSound(
+            "https://tekie-backend.s3.amazonaws.com/content/tom-mid_sound_61.wav"
+          );
+          animateKey(key);
+        }
+        if (key === "h") {
+          playSound(
+            "https://tekie-backend.s3.amazonaws.com/content/tom-high_sound_72.wav"
+          );
+          animateKey(key);
+        }
+        if (key === "v" || key === "b") {
+          playSound(
+            "https://tekie-backend.s3.amazonaws.com/content/kick_sound_86&66.wav"
+          );
+          animateKey(key);
+        }
+        if (key === "j") {
+          playSound(
+            "https://tekie-backend.s3.amazonaws.com/content/snare_sound_74.wav"
+          );
+          animateKey(key);
+        }
+        if (key === "i") {
+          playSound(
+            "https://tekie-backend.s3.amazonaws.com/content/hihat-open_sound_73.wav"
+          );
+          animateKey(key);
+        }
+        if (key === "k") {
+          playSound(
+            "https://tekie-backend.s3.amazonaws.com/content/hihat-close_sound_75.wav"
+          );
+          animateKey(key);
+        }
+      }
+
+      window.addEventListener("keypress", playDrum);
+
+      function animateKey(currentKey) {
+        var activeKey = document.querySelector(".key_" + currentKey);
+        activeKey.classList.add("playing");
+        setTimeout(function () {
+          activeKey.classList.remove("playing");
+        }, 400);
+      }
+
+      function animateRide(event) {
+        var key = event.key;
+        if (key === "r") {
+          var crashRide = document.querySelector(".crash-cymbal");
+          crashRide.style.transform = "rotate(8deg)";
+          setTimeout(function () {
+            crashRide.style.transform = "rotate(0deg)";
+          }, 100);
+        }
+      }
+      window.addEventListener("keypress", animateRide);
+
+      function animateCrash(event) {
+        var key = event.key;
+        if (key === "e") {
+          var crashRide = document.querySelector(".crash-cymbal");
+          crashRide.style.transform = "rotate(-8deg)";
+          setTimeout(function () {
+            crashRide.style.transform = "rotate(0deg)";
+          }, 100);
+        }
+        if (key === "i") {
+          var crashRide = document.querySelector(".hihat-top-cymbal");
+          crashRide.style.transform = "rotate(-8deg)";
+          setTimeout(function () {
+            crashRide.style.transform = "rotate(0deg)";
+          }, 100);
+        }
+      }
+      window.addEventListener("keypress", animateCrash);
+
+      function animateClosedHihat(event) {
+        var key = event.key;
+        if (key === "k") {
+          var crashRide = document.querySelector("#hihat-top");
+          crashRide.style.top = "7%";
+          setTimeout(function () {
+            crashRide.style.top = "5%";
+          }, 100);
+        }
+      
+      }
+      window.addEventListener("keypress", animateClosedHihat);
+
+
+    </script>
+  </body>
+</html>

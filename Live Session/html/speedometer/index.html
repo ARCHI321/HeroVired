@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #e3f6f5;
+        font-family: Bebas Neue;
+      }
+      header {
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        margin-top: 52px;
+      }
+
+      header h1 {
+        color: #02164b;
+        font-size: 100px;
+        font-weight: normal;
+        line-height: 0.5px;
+      }
+      .speed {
+        color: #02164b;
+        opacity: 0.6px;
+        font-size: 25px;
+        text-align: center;
+      }
+      .speed-box {
+        width: 80%;
+        height: 316px;
+        background-color: #02164b;
+        margin: auto;
+        text-align: center;
+        color: #ffffff;
+        font-size: 200px;
+        border-radius: 20px;
+      }
+      .speed-box h3 {
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 0px;
+      }
+
+      .speed-box p {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>SPEEDOMETER</h1>
+    </header>
+    <div class="speed">
+      <h1>Speed</h1>
+
+      <h1 onclick="clicked()">Click me to Change Speed</h1>
+    </div>
+    <div class="speed-box">
+      <p id="speed">0</p>
+      <h3>[KM/H]</h3>
+    </div>
+
+    <script>
+      
+      function clicked(){
+          alert("hello");
+          var ans = prompt("Do you want to alter speed ? (y/n)");
+          var speed = 0;
+          alert(ans);
+          if(ans == 'y'){
+              do{
+              var ans1 = prompt("Do you want to accelerate / decelerate / stop / steady ?  1. Accelerate  2. Decelerate  3. Stop the car   4. Keep the car steady  ");
+              alert(ans1)
+              if(ans1 === '1'){
+                  var acc = prompt("by how much you want to accelerate ? ")
+                  speed = document.getElementById('speed').innerHTML;
+                  speed = parseInt(speed) + parseInt(acc);
+                  document.getElementById('speed').innerHTML = speed;
+              }
+              if(ans1 === '2'){
+                  speed = document.getElementById('speed').innerHTML;
+                  if(speed <= 0){
+                      prompt("It can't be decelerated.")
+                  }
+                  else{
+                      var dcc = prompt("by how much you want to decelerate ? ")
+                      speed = parseInt(speed) - parseInt(dcc);
+                      document.getElementById('speed').innerHTML = speed;
+                  }
+              }
+          }while(ans1 != '3');
+
+              
+
+
+         }
+         
+      }
+    </script>
+  </body>
+</html>

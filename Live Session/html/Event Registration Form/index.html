@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <title>
+            Event Registration Form
+        </title>
+        <style>
+            *{
+                
+                margin:0px;
+                padding:0px;
+            }
+            header{
+                background-color:#F4FBFF;
+                margin:auto;
+                border-radius:6px;
+                width:75%;
+                height:140px;
+                background-image:url("https://tekie-backend.s3.amazonaws.com/webDevelopment/header_cl38ijtya06jc0v3p8oau3utu_1652692680802.png");
+                background-size:100% 140px;
+                opacity:0.8;
+                color:white;
+                font-size:22px;
+                padding-top:50px;
+                padding-left:20px;
+            }
+            .personal-details{
+                width:75%;
+                height:auto;
+                margin:auto;
+                background-color:white;
+                border-radius:8px;
+                margin-bottom:15px;
+                box-shadow:0px 0px 12px rgba(0,0,0,0.8);
+                
+            }
+            .personal-title{
+                width:auto;
+                height:25px;
+                background-color:#BFF4FF;
+                padding:10px 10px 10px 20px;
+                border-radius:8px 8px 0px 0px;
+                margin-top:20px;
+            
+            }
+            label{
+                font-size:21px;
+            }
+            input[type = "text"]{
+                height:25px;
+                width:70%;
+                margin-bottom :10px;
+                border:none;
+                border-bottom:1px solid black;
+            }
+            input[type = "email"]{
+                height:25px;
+                width:70%;
+                margin-bottom :10px;
+                border:none;
+                border-bottom:1px solid black;
+            }
+            input[type = "tel"]{
+                height:25px;
+                width:70%;
+                margin-bottom :10px;
+                border:none;
+                border-bottom:1px solid black;
+            }
+            .personal-detail{
+                padding:20px;
+            }
+                
+            
+        </style>
+        
+    </head>
+    <body>
+        <header>
+            
+            <h1>
+                Science Fair<br>
+                Registration form
+                
+            </h1>
+            
+        </header>
+        <form>
+            <div class = "personal-details">
+                <div class="personal-title">
+                    <h1>
+                        Personal Details
+                    </h1>
+                </div>
+                
+                <div class="personal-detail">
+                <label for = name>
+                    Name
+                    <span class = "required">
+                        *
+                    </span>
+                    
+                </label>
+                
+                <br>
+                <input type = "text" name = "name" id = "name" placeholder = "Enter name here" required>
+                <br>
+                <label for = email>
+                    Email
+                    <span class = "required">
+                        *
+                    </span>
+                    
+                </label>
+                <br>
+                <input type = "email" name = "email" id = "email" placeholder = "Enter email here" required>
+                <br>
+                <label for = phone-number>
+                    Phone number
+                    <span class = "required">
+                        *
+                    </span>
+                    
+                </label>
+                
+                <br>
+                <input type = "tel" name = "mob" id = "mob" placeholder = "Enter phone number here" pattern=[6-9]{1}[0-9]{9} required>
+                <br>
+            </div>
+                
+            </div>
+        </form>
+    </body>
+</html>

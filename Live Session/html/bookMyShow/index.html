@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <title>Registration Form</title>
+    </head>
+    <style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Roboto:wght@100&display=swap');
+        body
+        {
+             background: #FDF8F7;
+            font-family:DM Sans;
+        }
+        .header{
+            width:75%;
+            height:140px;
+            margin:auto;
+            background-image: url("https://tekie-backend.s3.amazonaws.com/webDevelopment/Group8_cl3oi3rsp000y0u2ae6tx57hi_1653659390329.png");
+            background-size: 100% 140px;
+            border-radius:6px;
+        }
+        .header h1
+        {
+            padding-top:50px;
+            padding-left:20px;
+            color:#FFFFFF;
+        }
+        .personal-details
+        {
+            width:70%;
+            margin:auto;
+            height:auto;
+            background-color: #FFFFFF;
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            margin-bottom:15px;
+            padding:20px;
+        }
+label {
+  font-size: 12px;
+}
+input[type="text"],input[type="tel"],input[type="datetime-local"]{
+  height: 25px;
+  width:70%;
+  margin-bottom:10px;
+  border:none;
+  border-bottom:1px solid black;
+}
+input[type="datetime-local"]{
+    width:40%;
+}
+
+.button
+{
+    width:40%;
+    margin:auto;
+    text-align:center;
+}
+input[type="submit"]
+{
+    background: #D66A61;
+    border:none;
+    padding:10px 20px 10px 20px;
+    color:#FFFFFF;
+    border-radius: 100px;
+    font-family:Roboto;
+    font-weight:bold;
+}
+::placeholder
+{
+    font-size:10px;
+    color: #7C7C7C;
+    font-family:DM Sans;
+}
+.required
+{
+  color:red;
+  font-size:13px;
+}
+</style>
+
+  <body>
+    <div class="header">
+      <h1>Book your favourite <br>movie ticket now </h1>
+    </div>
+    <br>
+    <form >
+      <div class="personal-details">
+
+         <label for="name">Name <span class="required"> * </span> </label> <br>
+         <input type="text" name="name" id="user" placeholder="Enter Name Here" maxlength="20" required><br>
+         
+          <label for="mob">Phone Number <span class="required"> * </span> </label><br>
+         <input type="tel" name="mob" id="mob" pattern="[6-9]{1}[0-9]{9}"  placeholder="Enter Phone Number Here" required><br>
+         
+         <label for="date">Pick Your Date & Time:<span class="required"> * </span> </label><br>
+        <input type="datetime-local" id="date" name="date">
+        <br><br>
+       
+          <label for= "movie">Select Your Movie<span class="required"> * </span> </label><br>
+          <input type=radio id="movie1" name="movie">
+          <label for="movie1" > Encanto</label><br>
+          <input type=radio id="movie2" name="movie">
+          <label for="movie2" > Over the moon </label><br>
+          <input type=radio id="movie3" name="movie">
+          <label for="movie3" > Soul</label><br>
+            <input type=radio id="movie4" name="movie">
+          <label for="movie4" > Luca </label><br>
+            <input type=radio id="movie5" name="movie">
+          <label for="movie5" > Frozen </label><br>
+           <input type=radio id="movie6" name="movie">
+          <label for="movie6" > Wish Dragon </label><br><br>
+         
+         
+           <label for= "movie">Format<span class="required"> * </span> </label><br>
+          <input type=radio id="format1" name="format">
+          <label for="format1" > 2D</label>
+          <input type=radio id="format2" name="format">
+          <label for="format2" > 3D </label>
+          <input type=radio id="format3" name="format">
+          <label for="format3" > 3D ScreenX</label><br><br>
+         
+    <label>Add Ons</label><br>
+   <input type="checkbox" id="add1" name="add1" value="add1" >
+   <label for="add1"> Wizard </label><br>
+   <input type="checkbox" id="add2" name="add2" value="add2" >
+   <label for="add2"> Goggles</label><br>
+   <input type="checkbox" id="add3" name="add3" value="add3">
+   <label for="add3"> Captivating Crystals</label><br>
+   <input type="checkbox" id="add4" name="add4" value="add4">
+   <label for="add4"> Magical Wristband</label><br>
+   <input type="checkbox" id="add5" name="add5" value="add5">
+   <label for="add5">Magic Stick</label>
+         
+      </div>
+<div class="button">
+<input type="submit"  value ="Book Now"><br><br><br>
+</div>
+</form>
+
+
+</body>
+</html>

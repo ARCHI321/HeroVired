@@ -1,0 +1,170 @@
+
+<html>
+  <head>
+    <title>Dino Game</title>
+    <style>
+      .header {
+        height: 100px;
+        display: flex;
+        flex-direction: column-reverse;
+      }
+      .header h1 {
+        font-family: "Papyrus";
+        text-align: center;
+      }
+      .score span {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .main {
+        width: 600px;
+        height: 200px;
+        margin: auto;
+        border: 2px solid black;
+      }
+      #dino {
+        width: 50px;
+        height: 50px;
+        background-image: url("https://tekie-backend.s3.amazonaws.com/webDevelopment/dino_cl7zp852z03qz0tvq085uhnat_1663043608763.png");
+        background-size: 50px;
+        position: relative;
+        top: 150px;
+      }
+      .jump {
+        animation: jump 0.3s linear;
+      }
+
+      @keyframes jump {
+        0% {
+          top: 150px;
+        }
+        30% {
+          top: 100px;
+        }
+        50% {
+          top: 60px;
+        }
+        80% {
+          top: 100px;
+        }
+        100% {
+          top: 150px;
+        }
+      }
+      #cactus {
+        width: 20px;
+        height: 40px;
+        position: relative;
+        top: 110px;
+        left: 580px;
+        background-image: url(https://tekie-backend.s3.amazonaws.com/webDevelopment/cactus_cl7zp85kb03wu0vsifzck1i1r_1663043609387.png);
+        background-size: 20px 40px;
+      }
+      .play {
+        animation: 1000ms linear 0ms infinite normal none running block;
+      }
+      @keyframes block {
+        0% {
+          left: 580px;
+        }
+        100% {
+          left: -20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Dino game</h1>
+      <div class="score">
+        <span>Score</span>
+        <span id="hi-score">0000</span>
+        <span id="score">0000</span>
+      </div>
+    </div>
+    <div class="main">
+      <div id="dino"></div>
+      <div id="cactus"></div>
+    </div>
+    <script>
+      const dino = document.getElementById("dino");
+
+      const cactus = document.getElementById("cactus");
+
+      
+      var hi_score = document.getElementById("hi-score").textContent;
+      localStorage.setItem('score' , 0);
+      localStorage.setItem('hi-score' , 0);
+
+      //var score = 0;
+      var flag = 0;
+
+      function jump() {
+        if (dino.classList != "jump") {
+          dino.classList.add("jump");
+
+          setTimeout(function () {
+            dino.classList.remove("jump");
+          }, 300);
+        }
+      }
+
+      function startGame() {
+        cactus.classList.add("play");
+        flag = 1; // to start the cactus animation on jump
+        jump();
+      }
+
+      function stopGame() {
+        cactus.classList.remove("play"); // to stop the cactus animation
+      }
+
+      let isAlive = function () {
+        // get current dino Y position
+        //console.log(flag);
+        if (flag == 1) {
+          var score = parseInt(document.getElementById("score").textContent);
+          score = score + 1;
+          document.getElementById("score").textContent = '00' + score.toString();
+          //console.log(score,hi_score);
+        }
+
+        
+
+        let dinoTop = parseInt(
+          window.getComputedStyle(dino).getPropertyValue("top")
+        );
+
+        // get current cactus X position
+
+        let cactusLeft = parseInt(
+          window.getComputedStyle(cactus).getPropertyValue("left")
+        );
+
+        // detect collision
+
+        if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
+          // collision
+          stopGame();
+          flag = 0;
+          
+          
+          if(score > localStorage.getItem('score')){
+            localStorage.setItem('score' , score);
+            document.getElementById("hi-score").textContent = '00' + localStorage.getItem('score')
+          } 
+          document.getElementById("score").textContent = '0000';
+          
+          alert("Game Over!");
+        }
+      };
+
+      setInterval(isAlive, 10);
+
+      document.addEventListener("keydown", function (event) {
+        startGame();
+        jump();
+      });
+    </script>
+  </body>
+</html>

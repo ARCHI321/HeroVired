@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url("https://tekie-backend.s3.amazonaws.com/webDevelopment/3-01 1_cl4cntj3l001y0w057uliguk4_1655120178417.png");
+            background-size: 1000px;
+            font-family: DM Sans;
+        }
+
+        .form-details {
+            width: 50%;
+            margin: auto;
+            margin-top: 10%;
+            height: auto;
+            background-color: white;
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .form-title {
+            width: 40%;
+            height: 50px;
+            margin: auto;
+            padding-top: 20px;
+        }
+
+        .form-title img {
+            height: 100%;
+            width: 100%;
+        }
+
+        form-detail {
+            padding: 20px;
+        }
+
+        label {
+            font-size: 13px;
+        }
+
+        span {
+            color: red;
+            font-size: 13px;
+        }
+
+        input[type="password"] {
+            width: 80%;
+            height: 25px;
+            margin-bottom: 10px;
+            border: none;
+            border-bottom: 1px solid gray;
+        }
+
+        input[type="email"] {
+            width: 80%;
+            height: 25px;
+            margin-bottom: 10px;
+            border: none;
+            border-bottom: 1px solid gray;
+        }
+
+        .button {
+            width: 40%;
+            margin: auto;
+        }
+
+        input[type="submit"] {
+            background-color: #3bb45f;
+            border: none;
+            padding: 10px 20px 10px 20px;
+            color: white;
+            border-radius: 100px;
+            font-family: Roboto;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form onsubmit="submitForm()" action="/action.php"  method="POST">
+        <div class="form-details">
+            <div class="form-title">
+                <img
+                    src="https://tekie-backend.s3.amazonaws.com/webDevelopment/tekie-logo_cl4cntuec00200w052x2a1tfn_1655120193060.png" />
+            </div>
+            <br />
+            <div class="form-detail">
+                <label for="email">
+                    Email
+                    <span class="required">*</span>
+                </label>
+                <br />
+                <input type="text" name="email" id="email" placeholder="Enter your email" required />
+                <br />
+                <br />
+                <label for="password">
+                    Password
+                    <span class="requied">*</span>
+                </label>
+                <br />
+                <input type="password" name="password" id="password" placeholder="Enter you password" minlength="8"
+                    maxlength="15" required />
+            </div>
+
+            <div class="button">
+                <input type="submit" value="Login" />
+            </div>
+        </div>
+    </form>
+
+    <script>
+        function submitForm() {
+            console.log("clicked");
+            alert("Logged in successfully");
+        }
+    </script>
+</body>
+
+</html>

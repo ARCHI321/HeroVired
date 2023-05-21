@@ -1,0 +1,11 @@
+c = set()
+c.add(1)
+c.add(2)
+c.add(3)
+print(c)
+c.remove(2)
+c.add(4)
+print(c)
+print(c.pop())
+print(c.clear())
+

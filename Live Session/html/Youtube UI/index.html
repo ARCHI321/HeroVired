@@ -1,0 +1,357 @@
+d<html>
+  <head>
+    <title>Youtube UI</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+
+      body {
+        background-color: #1e1e1e;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .header {
+        height: 50px;
+        width: 100%;
+        background-color: #000000;
+      }
+
+      .header img {
+        display: block;
+        margin: auto;
+      }
+
+      .video-player {
+        width: 100%;
+        height: 500px;
+        padding: 10px;
+      }
+
+      .left-container {
+        width: 60%;
+        height: 400px;
+        float: left;
+        margin-right: 15px;
+      }
+
+      .frame {
+        width: 100%;
+        height: 310px;
+        border-style: none;
+      }
+
+      .video-title {
+        width: 100%;
+        height: 50px;
+      }
+
+      .tekie-logo {
+        width: 100%;
+        height: 40px;
+        border-top: 1px solid #525252;
+        border-bottom: 1px solid #525252;
+        padding: 10px;
+        padding-right: 0px;
+      }
+
+      .hash {
+        color: #5aa6f8;
+        font-size: 12px;
+        font-family: "DM Sans";
+      }
+
+      .topic {
+        color: white;
+        font-size: 15px;
+        line-height: 0.5px;
+        font-family: "DM Sans";
+      }
+
+      .logo img {
+        float: left;
+        height: 35px;
+        width: 35px;
+      }
+
+      .about {
+        height: 48px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .about-sub {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .about span {
+        float: left;
+        padding-left: 5px;
+        font-size: 12px;
+        color: white;
+        line-height: 0.1px;
+        font-family: "DM Sans";
+        position: relative;
+        top: 10px;
+      }
+
+      .about button {
+        background-color: #ff0000;
+        border-radius: 6px;
+        color: white;
+        height: 30px;
+        width: 90px;
+        float: right;
+      }
+
+      .right-container-playlist {
+        width: 35%;
+        height: 500px;
+        float: left;
+      }
+
+      .playlist-title {
+        height: 45px;
+        background-color: #292929;
+        margin-bottom: 10px;
+        padding-top: 1px;
+        font-size: 15px;
+        color: white;
+        font-family: DM Sans;
+      }
+
+      .playlist-title p {
+        padding-left: 3px;
+      }
+
+      .single-video {
+        width: 100%;
+        height: 89px;
+        background-color: #292929;
+        margin-bottom: 10px;
+        border: none;
+      }
+
+      .sequence {
+        float: left;
+        padding-right: 10px;
+        padding-top: 20px;
+        color: white;
+        font-size: 10px;
+        font-family: DM Sans;
+        left: -2px;
+        position: relative;
+      }
+
+      .thumbnail {
+        float: left;
+        padding-top: -1px;
+        position: relative;
+        left: -3px;
+      }
+
+      .thumbnail img {
+        height: 63px;
+        width: 123px;
+      }
+
+      .title {
+        float: right;
+        width: 50%;
+        font-size: 10px;
+        color: white;
+        font-family: DM Sans;
+        text-align: left;
+        line-height: 1.1px;
+      }
+
+      #add-video {
+        display: block;
+        margin: auto;
+        background-color: #ff0000;
+        border-radius: 6px;
+        color: white;
+        height: 30px;
+        width: 90px;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body onLoad="countsequence();">
+    <div class="header">
+      <img
+        src="https://variety.com/wp-content/uploads/2020/06/youtube-logo.png?w=999"
+        alt="Youtube-logo"
+        width="15%"
+        height="50px"
+      />
+    </div>
+    <div class="video-player">
+      <div class="left-container">
+        <div class="frame">
+          <iframe
+            id="iframe-get"
+            src="https://www.youtube.com/embed/vHP4XJoccnA"
+            title="description"
+            height="310px"
+            width="100%"
+          ></iframe>
+        </div>
+        <div class="video-title">
+          <p class="hash">#100yearsofcoding</p>
+          <p class="topic">Jaideep's coding playlist</p>
+        </div>
+        <div class="tekie-logo">
+          <div class="logo">
+            <img
+              src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/tciuaatladqute35p3jh"
+            />
+          </div>
+          <div class="about">
+            <div class="about-sub">
+              <span> Tekie </span>
+              <br />
+              <span> 2.5M Subscribers </span>
+            </div>
+
+            <button>Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="right-container-playlist">
+        <div class="playlist-title">
+          <p>Jaideep's coding playlist</p>
+        </div>
+        <div class="playlist-buttons" id="video-add">
+          <button onclick="playVideo('vHP4XJoccnA')" class="single-video">  
+            <div class="sequence">
+              <p id="1"></p>
+            </div>
+            <div class="thumbnail">
+              <img
+                src="https://tekie-backend.s3.amazonaws.com/email/01_cl1asy3rm01wm0y8l6vt5hjyt_1648477510547.png"
+              />
+            </div>
+            <div class="title">
+              <p>What is Coding? Tech Byte #01</p>
+              <p>Tekie</p>
+            </div>
+          </button>
+          <button onclick="playVideo('ZNrkvgxpPqM')" class="single-video">
+            <div class="sequence">
+              <p id="2"></p>
+            </div>
+            <div class="thumbnail">
+              <img
+                src="https://tekie-backend.s3.amazonaws.com/email/02_cl1aszsi501wp0y8l0mx5aa5z_1648477589261.png"
+              />
+            </div>
+            <div class="title">
+              <p>What is Coding? Tech Byte #02</p>
+              <p>Tekie</p>
+            </div>
+          </button>
+          <button onclick="playVideo('h_rZpeHQdBA')" class="single-video">  
+            <div class="sequence">
+              <p id="3"></p>
+            </div>
+            <div class="thumbnail">
+              <img
+                src="https://tekie-backend.s3.amazonaws.com/email/03_cl1at0v6601wr0y8leegrai7x_1648477639374.png"
+              />
+            </div>
+            <div class="title">
+              <p>What is Coding? Tech Byte #03</p>
+              <p>Tekie</p>
+            </div>
+          </button>
+          <button onclick="playVideo('UZXEp6CFCyE')" class="single-video">   
+            <div class="sequence">
+              <p id="4"></p>
+            </div>
+            <div class="thumbnail">
+              <img
+                src="https://tekie-backend.s3.amazonaws.com/email/04_cl1at1dch01wx0y8l51e645x5_1648477662929.png"
+              />
+            </div>
+            <div class="title">
+              <p>What is Coding? Tech Byte #04</p>
+              <p>Tekie</p>
+            </div>
+          </button>
+        </div>
+        <button id="add-video" onclick="addVideo()">Add a Video</button>
+      </div>
+    </div>
+    <script>
+      function playVideo(id) {
+        var newUrl = "https://www.youtube.com/embed/" + id;
+        console.log(newUrl);
+        var oldurl = document.getElementById("iframe-get");
+        // console.log(oldurl);
+        document.getElementById("iframe-get").src = newUrl;
+      }
+
+      function countsequence() {
+        var elements = document.getElementsByClassName("single-video");
+        var arr = Array.from(elements); 
+        console.log(arr);
+        for (i = 0;i<arr.length; i++)
+        {
+          localStorage.setItem("1" , arr[i])
+        }
+        
+        // console.log("====================================");
+        // console.log(elements);
+        // console.log("====================================");
+        for (let i = 1; i <= elements.length; i++) {
+          document.getElementById(i).innerHTML = i;
+        }
+      }
+
+      function hello(){
+        console.log("hello");
+      }
+      
+
+      // <div class="sequence">
+      //         <p id="3"></p>
+      //       </div>
+      //       <div class="thumbnail">
+      //         <img
+      //           src="https://tekie-backend.s3.amazonaws.com/email/03_cl1at0v6601wr0y8leegrai7x_1648477639374.png"
+      //         />
+      //       </div>
+      //       <div class="title">
+      //         <p>What is Coding? Tech Byte #03</p>
+      //         <p>Tekie</p>
+      //       </div>
+      function addVideo() {
+        imgUrl ="https://i.ytimg.com/vi/VSLcaY4fhi4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBGQeR-vUBAUpzSbm0P7tYk9QMWcA";
+        title2 = prompt("Enter organization");
+        // 8zpHHl39t9M
+        Uid = "WY4fKhq9tfE";
+        let btn = document.createElement("button");
+        btn.classList.add("single-video");
+
+        var div1 =  '<div class="sequence"> <p id = "5"> </div>';
+        var div2 =  '<div class="thumbnail"> <img src ="https://tekie-backend.s3.amazonaws.com/email/04_cl1at1dch01wx0y8l51e645x5_1648477662929.png"> </div>';
+
+        var div3 =  `<div class="title"> <p>What is Coding? Tech Byte #05</p> <p>${title2}</p> <div>`
+        btn.innerHTML =  div1 + div2 + div3;
+        //console.log(btn);
+        //console.log(document.getElementById("video-add"));
+        const divVideo = document.getElementById("video-add");
+        divVideo.appendChild(btn);
+        //console.log(document.getElementById("video-add"));
+        countsequence()
+        //btn.onclick = playVideo("8zpHHl39t9M");
+        btn.addEventListener("click", playVideo("8zpHHl39t9M"));
+        console.log(localStorage.getItem("buttons"))
+      }
+    </script>
+  </body>
+</html>

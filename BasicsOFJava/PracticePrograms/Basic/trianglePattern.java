@@ -1,4 +1,4 @@
-package BasicsOFJava.PracticePrograms;
+package BasicsOFJava.PracticePrograms.Basic;
 
 public class trianglePattern {
     public static void main(String[] args)  {

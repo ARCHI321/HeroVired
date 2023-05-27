@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+.bg-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@media (min-width:768px) {
+    .bg-container {
+        flex-direction: row;
+    }
+}
+
+.background-image-cont {
+    background-image: url('https://res.cloudinary.com/dsf2gec5l/image/upload/v1675062311/WebDev/session-6/design_be6xvp.jpg');
+    width: 100%;
+    flex-grow: 1;
+    background-size: cover;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width:768px) {
+    .background-image-cont {
+        background-image: url('https://res.cloudinary.com/dsf2gec5l/image/upload/v1675062311/WebDev/session-6/design_be6xvp.jpg');
+        height: 100vh;
+    }
+}
+
+.bulb-image {
+    width: 60px;
+    height: 60px;
+	
+	
+}
+
+@media (min-width:768px) {
+    .bulb-image {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.icon-container{
+	padding: 20px;
+	background-color: white;
+	border-radius: 50%;
+}
+.content-section {
+    background-color: #6a4740;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.header {
+    font-family: Roboto;
+    font-size: 20px;
+    color: white;
+    font-weight: 400;
+
+}
+
+@media (min-width:768px) {
+    .header {
+        font-size: 30px;
+    }
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-detail {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+
+}
+
+.feature-title {
+    font-family: Roboto;
+    font-size: 18px;
+    color: #12022f;
+    margin-bottom: 10px;
+}
+
+.feature-desc {
+    font-family: Roboto;
+    font-size: 14px;
+    color: #7b8794;
+}

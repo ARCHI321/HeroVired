@@ -1,4 +1,4 @@
-package BasicsOFJava.PracticePrograms;
+package BasicsOFJava.PracticePrograms.Basic;
 
 import java.util.*;
 public class multiplicationTable {

@@ -1,3 +1,5 @@
 Snapshots - https://github.com/ARCHI321/HeroVired/tree/master/Assignments/Java/assignment3
 
-Actual code - https://github.com/ARCHI321/HeroVired/tree/master/BasicsOFJava/PracticePrograms
+Actual code - https://github.com/ARCHI321/HeroVired/blob/master/BasicsOFJava/PracticePrograms/Basic/InventoryManagement.java
+
+              https://github.com/ARCHI321/HeroVired/blob/master/BasicsOFJava/PracticePrograms/Basic/TemperatureConverter.java

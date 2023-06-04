@@ -9,10 +9,8 @@ public class valueFromFile {
 
     public static void main(String[] args) {
 
-        // read text file to HashMap
         HashMap<String, List<String>> mapFromFile = HashMapFromTextFile();
 
-        // iterate over HashMap entries
         for (Entry<String, List<String>> entry : mapFromFile.entrySet()) {
             System.out.println(entry.getKey() + " : "
                     + entry.getValue());
@@ -23,7 +21,7 @@ public class valueFromFile {
         val.set(0, "HTML CSS AND JS");
         mapFromFile.put("101", val);
         System.out.println(mapFromFile);
-        //HashMapToTextFile(mapFromFile);
+        // HashMapToTextFile(mapFromFile);
     }
 
     public static HashMap<String, List<String>> HashMapFromTextFile() {
@@ -33,22 +31,17 @@ public class valueFromFile {
 
         try {
 
-            // create file object
             File file = new File(filePath);
 
-            // create BufferedReader object from the File
             br = new BufferedReader(new FileReader(file));
 
             String line = null;
 
-            // read file line by line
             while ((line = br.readLine()) != null) {
 
-                // split the line by :
                 ArrayList<String> values = new ArrayList<>();
                 String[] parts = line.split(",");
 
-                // first part is name, second is number
                 String bookId = parts[0].trim();
                 values.add(parts[1]);
                 values.add(parts[2]);
@@ -62,7 +55,6 @@ public class valueFromFile {
             e.printStackTrace();
         } finally {
 
-            // Always close the BufferedReader
             if (br != null) {
                 try {
                     br.close();
@@ -74,51 +66,43 @@ public class valueFromFile {
 
         return map;
     }
+
     public static void HashMapToTextFile(Map<String, List<String>> map) {
 
         File file = new File(filePath);
-  
+
         BufferedWriter bf = null;
-  
+
         try {
-  
-            // create new BufferedWriter for the output file
+
             bf = new BufferedWriter(new FileWriter(file));
-  
-            // iterate map entries
-            for (Map.Entry<String, List<String>> entry :
-                 map.entrySet()) {
-  
-                // put key and value separated by a colon
+
+            for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+
                 bf.append(entry.getKey())
-                   .append(',')
-                   .append(entry.getValue().get(0))
-                   .append(',')
-                   .append(entry.getValue().get(1))
-                   .append(',')
-                   .append(entry.getValue().get(2))
-                   .append(',')
-                   .append(entry.getValue().get(3));
-  
-                // new line
+                        .append(',')
+                        .append(entry.getValue().get(0))
+                        .append(',')
+                        .append(entry.getValue().get(1))
+                        .append(',')
+                        .append(entry.getValue().get(2))
+                        .append(',')
+                        .append(entry.getValue().get(3));
+
                 bf.newLine();
             }
-  
+
             bf.flush();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally {
-  
+        } finally {
+
             try {
-  
-                // always close the writer
+
                 bf.close();
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
             }
         }
     }
 
-    }
+}

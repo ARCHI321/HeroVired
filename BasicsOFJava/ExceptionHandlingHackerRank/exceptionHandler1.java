@@ -2,7 +2,7 @@ package BasicsOFJava.ExceptionHandlingHackerRank;
 
 import java.util.Scanner;
 class MyCalculator {
-     public int power(int n, int p) throws Exception {
+     public long power(int n, int p) throws Exception {
         if (n < 0 || p < 0){
             throw  new Exception("n or p should not be negative.");
         }
@@ -11,7 +11,7 @@ class MyCalculator {
             throw  new Exception("n and p should not be zero.");
         }
 
-        return (int) Math.pow(n, p);
+        return (long) Math.pow(n, p);
     }
     
 }

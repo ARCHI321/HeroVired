@@ -2,3 +2,5 @@ code link - https://github.com/ARCHI321/HeroVired/tree/master/BasicsOFJava/FileH
 
 hackerrank screenshots link - https://github.com/ARCHI321/HeroVired/tree/master/Assignments/Java/assignment6
 
+hackerank codes - https://github.com/ARCHI321/HeroVired/tree/master/BasicsOFJava/ExceptionHandlingHackerRank
+

@@ -30,11 +30,11 @@ public class InventoryManagement {
         System.out.println("Total available count : " + products[i][3]);
         flag = 1;
         break;
-      } 
+      }
 
     }
 
-    if(flag == 0){
+    if (flag == 0) {
       System.out.println("Product not found");
     }
     System.out.println(
@@ -55,10 +55,10 @@ public class InventoryManagement {
         System.out.println(products[i][4]);
         flag = 1;
         break;
-      } 
+      }
 
     }
-    if(flag == 0){
+    if (flag == 0) {
       System.out.println("Product not found");
     }
     System.out.println(
@@ -66,12 +66,12 @@ public class InventoryManagement {
   }
 
   public static void editSpecifications(String[][] products, int pid) {
-    int flag  = 0 ;
+    int flag = 0;
     System.out.println(
         "-----------------------------------------------------------------------------------------------------");
 
     for (int i = 0; i < products.length; i++) {
-      
+
       Scanner sc = new Scanner(System.in);
       int p = Integer.parseInt(products[i][0]);
       if (p == pid) {
@@ -94,10 +94,10 @@ public class InventoryManagement {
           System.out.println(products[i][0] + " " + products[i][1] + " " + products[i][4]);
         }
         break;
-      } 
+      }
 
     }
-    if(flag == 0){
+    if (flag == 0) {
       System.out.println("Product not found");
     }
     System.out.println(
@@ -147,10 +147,10 @@ public class InventoryManagement {
         }
         break;
 
-      } 
+      }
 
     }
-    if(flag == 0){
+    if (flag == 0) {
       System.out.println("Product not found");
     }
     System.out.println(
@@ -166,7 +166,7 @@ public class InventoryManagement {
         { "102", "Laptop", "70000", "4", "Processor - AMD Ryzen 5 2600X Six Core Processor | RAM - 16GB" },
         { "103", "Tablet", "100000", "5", "Battery - 4500mAh | Storage - 16GB | Display - 8inch | RAM - 2GB" },
         { "104", "Portable HDD", "12000", "12", "Capacity : 2TB | Format - NTFS" },
-        { "105", "Bluetooth Headphone", "30000", "15"  , "Capacity : 2TB | Format - NTFS" },
+        { "105", "Bluetooth Headphone", "30000", "15", "Capacity : 2TB | Format - NTFS" },
         { "106", "Smart-watch", "2000", "15",
             "Compatibility - ios and Android | Water Resistance | Battery Life - 2days | GPS, fitness tracking, sleep monitoring, step counting, and more" },
         { "107", "Digital Camera", "56000", "5",
@@ -175,7 +175,7 @@ public class InventoryManagement {
             "Compatibility - ios and Android | Water Resistance | Battery Life - 2days |" },
         { "109", "Printer", "20000", "10",
             "Compatibility - ios and Android | Water Resistance | Battery Life - 2days |" },
-        { "110", " Wireless Router", "25000", "10",
+        { "110", "Wireless Router", "25000", "10",
             "Compatibility - ios and Android | Water Resistance | Battery Life - 2days |" } };
     String ans;
 

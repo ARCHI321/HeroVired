@@ -1,0 +1,11 @@
+1. select * from personal.contact where Active_flag=1;
+
+2. delete from personal.contact where opt_out=1;
+
+3. delete from personal.contact where company="ABC";
+
+4. insert into personal.contact (`Id`, `Email`, `fname`, `lname`, `company`, `Active_flag`, `opt_out`) values ('658', 'mili@gmail.com', 'mili', '', 'DGH', '1', '1');
+
+5. select distinct company from personal.contact;
+
+6. update personal.contact set fname = 'Niti' where id = 658;

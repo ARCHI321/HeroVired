@@ -1,0 +1,15 @@
+L - Liskov Substitution Principle (LSP): Objects of a superclass should be replaceable with objects of its subclasses without affecting the correctness of the program. In other words, subclasses should be substitutable for their base classes without causing unexpected behavior.
+
+I - Interface Segregation Principle (ISP): Clients should not be forced to depend on interfaces they do not use. This principle suggests that interfaces should be specific to the needs of the clients that use them, rather than being overly general.
+
+D - Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules. Both should depend on abstractions. Additionally, abstractions should not depend on details; details should depend on abstractions. This principle promotes the use of dependency injection and decouples components in the system.
+
+
+
+COHESION - INTRA MODULE
+COUPLING - INTER MODULE
+
+SOLID:-
+
+S - SINGLE RESPONSIBILITY
+O - 

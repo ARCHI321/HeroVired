@@ -1,0 +1,3 @@
+Hosted website - https://archi321.github.io/Restaurant-website/
+
+Github link - https://github.com/ARCHI321/Restaurant-website.git

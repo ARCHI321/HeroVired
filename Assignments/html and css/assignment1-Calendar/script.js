@@ -63,6 +63,7 @@ prevNextIcon.forEach((icon) => {
       currMonth = date.getMonth();
     } else {
       date = new Date();
+      // console.log(date);
     }
     renderCalendar();
   });

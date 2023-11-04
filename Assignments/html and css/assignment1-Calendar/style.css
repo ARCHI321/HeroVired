@@ -77,6 +77,8 @@ header .current-date{
   position: relative;
   margin-top: 30px;
 }
+
+
 .days li.inactive{
   color: #aaa;
 }

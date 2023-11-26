@@ -7,9 +7,18 @@
 .container{
     height:  200vh;
     width: 100vw;
-    background-color: #F3EEE8;
+    /* background-color: #F3EEE8; */
     display: flex;
     flex-direction: row;
+}
+
+.container::before{
+    content: "";
+    background-color: #F3EEE8;
+    height: 205vh;
+    width: 100vw;
+    position: absolute;
+    z-index: -1;
 }
 #calendar{
     height: 100%;
@@ -36,7 +45,8 @@
 #January , #February, #March , #April , #May , #June , #July , #August , #September , #October , #November , #December{
     height:100%;    
     width: 34%;
-    border: 1px solid black;
+    margin: 10px;
+    /* border: 1px solid black; */
 
 }
 
@@ -62,7 +72,7 @@
     flex: 1 0 8%;
 }
 
-
+205vh
 .days li.inactive{
     color: #aaa;
   }
@@ -72,4 +82,275 @@
     border-radius: 50%;
     margin-left: 0px;
     text-align: center;
+  }
+
+
+  @media screen and (max-width: 1350px) {
+    .container{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .year p{
+        rotate: 0deg;
+    }
+    #calendar{
+        width: 90%;
+    }
+    .weeks{
+        letter-spacing: 42px;
+    }
+    .year{
+        width: 100%;
+    }
+  }
+  @media screen and (max-width: 1136px) {
+    
+    #calendar{
+        width: 90%;
+    }
+    .weeks{
+        letter-spacing: 35px;
+    }
+    .year{
+        width: 100%;
+        background-color: #F3EEE8;
+    }
+  }
+  @media screen and (max-width: 1136px) {
+    
+    #calendar{
+        width: 90%;
+    }
+    .weeks{
+        letter-spacing: 30px;
+    }
+    .year{
+        width: 100%;
+        background-color: #F3EEE8;
+    }
+    
+  }
+  @media screen and (max-width: 956px) {
+    
+    #calendar{
+        width: 90%;
+    }
+    .weeks{
+        letter-spacing: 30px;
+    }
+
+    .days li {
+        margin: 10px;
+        flex: 1 0 6%;
+    }
+    .year{
+        width: 100%;
+        background-color: #F3EEE8;
+    }
+    
+  }
+  @media screen and (max-width: 898px) {
+    
+    #calendar{
+        width: 90%;
+    }
+    .weeks{
+        letter-spacing: 25px;
+    }
+
+    .days li {
+        margin: 10px;
+        flex: 1 0 6%;
+    }
+    .year{
+        width: 100%;
+        background-color: #F3EEE8;
+    }
+    .year p{
+        font-size: 345px;
+    }
+    
+  }
+  @media screen and (max-width: 810px) {
+    
+    #calendar{
+        width: 90%;
+        gap: 20px;
+    }
+    .weeks{
+        letter-spacing: 20px;
+    }
+
+    .days li {
+        margin: 10px;
+        flex: 1 0 5%;
+    }
+    .year{
+        width: 100%;
+        background-color: #F3EEE8;
+    }
+    .year p{
+        font-size: 300px;
+    }
+    
+  }
+  @media screen and (max-width: 746px) {
+    
+    #calendar{
+        width: 90%;
+        gap: 80px;
+        margin-top: 85px;
+    }
+    .weeks{
+        letter-spacing: 15px;
+    }
+
+    .days li {
+        margin: 10px;
+        flex: 1 0 3%;
+    }
+    .year{
+        width: 100%;
+        background-color: #F3EEE8;
+    }
+    .year p{
+        font-size: 250px;
+    }
+    .row1 , .row2 , .row3 , .row4{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .container{
+        justify-content: flex-end;
+    }
+
+
+    
+  }
+  @media screen and (max-width: 613px) {
+    
+    #calendar{
+        width: 90%;
+        gap: 80px;
+        margin-top: 75px;
+    }
+    .weeks{
+        letter-spacing: 14px;
+    }
+
+
+
+    .days li {
+        margin: 10px;
+        flex: 1 0 3%;
+        font-size: 10px;
+    }
+    .year{
+        width: 100%;
+        background-color: #F3EEE8;
+    }
+    .year p{
+        font-size: 150px;
+    }
+    .row1 , .row2 , .row3 , .row4{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .container{
+        justify-content: flex-end;
+    }
+
+
+    
+  }
+  @media screen and (max-width: 585px) {
+    
+    #calendar{
+        width: 90%;
+        gap: 80px;
+        margin-top: 75px;
+    }
+    .weeks{
+        letter-spacing: 10px;
+    }
+
+
+
+    .days li {
+        margin: 10px;
+        flex: 1 0 0.5%;
+        font-size: 7px;
+    }
+    .year{
+        width: 100%;
+        background-color: #F3EEE8;
+    }
+    .year p{
+        font-size: 150px;
+    }
+    .row1 , .row2 , .row3 , .row4{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .container{
+        justify-content: flex-end;
+    }
+
+
+    
+  }
+  @media screen and (max-width: 400px) {
+    
+    #calendar{
+        width: 90%;
+        gap: 80px;
+        margin-top: 75px;
+    }
+    .weeks{
+        letter-spacing: 10px;
+        margin-left: px;
+    }
+    
+    .container::before{
+        height: 400vh;
+    }
+
+
+    .days li {
+        margin: 10px;
+        flex: 1 0 0.5%;
+        font-size: 9px;
+    }
+    .year{
+        width: 100%;
+        background-color: #F3EEE8;
+    }
+    .year p{
+        font-size: 150px;
+    }
+    .row1 , .row2 , .row3 , .row4{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .container{
+        justify-content: flex-end;
+    }
+    #January , #February, #March , #April , #May , #June , #July , #August , #September , #October , #November , #December{
+        width: 50%;
+    }
+
+    
   }

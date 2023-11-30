@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Place List Manager</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      input {
+        padding: 10px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+      button:hover {
+        background-color: #2980b9;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .temporary-list,
+      .complete-list {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 20px;
+      }
+
+      .complete-list {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Place List Manager</h2>
+      <input type="text" id="placeInput" placeholder="Type a place name" />
+      <button onclick="addToTemporaryList()">Add to Temporary List</button>
+      <button onclick="moveAllToCompleteList()">
+        Move All to Complete List
+      </button>
+
+      <div class="temporary-list">
+        <h3>Temporary List</h3>
+        <ul id="temporaryList"></ul>
+      </div>
+
+      <div class="complete-list">
+        <h3>Complete List</h3>
+        <ul id="completeList"></ul>
+      </div>
+    </div>
+
+    <script>
+      function addToTemporaryList() {
+        var placeInput = document.getElementById("placeInput");
+        var temporaryList = document.getElementById("temporaryList");
+
+        if (placeInput.value.trim() !== "") {
+          var listItem = document.createElement("li");
+          listItem.setAttribute("id", "incompleteValue");
+          listItem.textContent = placeInput.value;
+          var button = document.createElement("button");
+          button.innerHTML = "Move to Complete List";
+          button.addEventListener("click", movetoCompleteList);
+          listItem.append(button);
+          temporaryList.appendChild(listItem);
+          placeInput.value = ""; // Clear the input field
+        }
+      }
+
+      function movetoCompleteList() {
+        var temporaryList = document.getElementById("incompleteValue");
+        var value = temporaryList.textContent.substring(
+          0,
+          temporaryList.textContent.indexOf("Move")
+        );
+        var listItem = document.createElement("li");
+        listItem.setAttribute("id", "completeValue");
+        listItem.textContent = value;
+        var button = document.createElement("button");
+        button.innerHTML = "Move to InComplete List";
+        button.addEventListener("click", movetoInCompleteList);
+        listItem.append(button);
+        var completeList = document.getElementById("completeList");
+        completeList.appendChild(listItem);
+        temporaryList.remove(value);
+      }
+
+      function movetoInCompleteList() {
+        var completeListList = document.getElementById("completeValue");
+        var value = completeListList.textContent.substring(
+          0,
+          completeListList.textContent.indexOf("Move")
+        );
+        var listItem = document.createElement("li");
+        listItem.setAttribute("id", "incompleteValue");
+        listItem.textContent = value;
+        var button = document.createElement("button");
+        button.innerHTML = "Move to Complete List";
+        button.addEventListener("click", movetoCompleteList);
+        listItem.append(button);
+        var temporaryList = document.getElementById("temporaryList");
+        temporaryList.appendChild(listItem);
+        completeListList.remove(value);
+      }
+
+      function moveAllToCompleteList() {
+        var temporaryList = document.getElementById("temporaryList");
+        var completeList = document.getElementById("completeList");
+
+        // Move all items from temporary list to complete list
+        while (temporaryList.firstChild) {
+          completeList.appendChild(temporaryList.firstChild);
+        }
+      }
+    </script>
+  </body>
+</html>

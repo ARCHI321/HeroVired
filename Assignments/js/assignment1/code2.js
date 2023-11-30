@@ -1,18 +1,16 @@
 function isValidSudoku(board) {
-  // Function to check if an array has duplicate values
   const hasDuplicates = (arr) => {
     const uniqueSet = new Set(arr.filter((num) => num !== "."));
     return uniqueSet.size !== arr.filter((num) => num !== ".").length;
   };
 
-  // Check each row
   for (let i = 0; i < 9; i++) {
     if (hasDuplicates(board[i])) {
       return false;
     }
   }
 
-  // Check each column
+
   for (let j = 0; j < 9; j++) {
     const column = [];
     for (let i = 0; i < 9; i++) {
@@ -23,7 +21,7 @@ function isValidSudoku(board) {
     }
   }
 
-  // Check each 3 x 3 sub-box
+
   for (let boxRow = 0; boxRow < 3; boxRow++) {
     for (let boxCol = 0; boxCol < 3; boxCol++) {
       const box = [];
@@ -38,7 +36,6 @@ function isValidSudoku(board) {
     }
   }
 
-  // If no duplicates found, the Sudoku board is valid
   return true;
 }
 
@@ -55,4 +52,4 @@ const sudokuBoard = [
   [".", ".", ".", ".", "8", ".", ".", "7", "9"],
 ];
 
-console.log(isValidSudoku(sudokuBoard)); // Output: true
+console.log(isValidSudoku(sudokuBoard));

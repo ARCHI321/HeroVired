@@ -1,0 +1,23 @@
+body {
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    margin: 50px;
+  }
+
+  #countdown {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  #startButton,
+  #replayButton {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  #replayButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
